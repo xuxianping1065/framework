@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../lib/html5.js"></script>
+    <script type="text/javascript" src="../lib/respond.min.js"></script>
+    <script type="text/javascript" src="../lib/PIE_IE678.js"></script>
+    <![endif]-->
+    <link href="../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+     <script type="text/javascript" src="../lib/My97DatePicker/WdatePicker.js"></script>
+    <title>表信息</title>
+</head>
+<body>
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript" src="../lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="../lib/layer/1.9.3/layer.js"></script>
+<script type="text/javascript" src="../js/H-ui.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/baiduTemplate.js"></script>
+
+<div class="pd-20" id="containerId">
+<script type="text/template"  id="template_id" >
+  <form method="post" class="form form-horizontal" id="model_form">
+ 		<div class="row cl">
+            <label class="form-label col-3">表名：</label>
+            <div class="formControls col-6">
+                <input type="text" id="tableName" class="input-text" value="<%=tableName %>" name="tableName" readonly="readonly" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+ 		<div class="row cl">
+            <label class="form-label col-3">表注释：</label>
+            <div class="formControls col-6">
+				<input type="text" id="tableAlias" class="input-text" value="<%=tableAlias %>" name="tableAlias" readonly="readonly" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+		<br>
+        
+ 		<div class="row cl">
+            <label class="form-label col-3">Model Package：</label>
+            <div class="formControls col-6">
+                <input type="text" id="modelPackage" class="input-text" value="<%=modelPackage %>" name="modelPackage" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Model Name：</label>
+            <div class="formControls col-6">
+                <input type="text" id="modelName" class="input-text" value="<%=modelName %>" name="modelName" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+		
+		<br>
+
+		<div class="row cl">
+            <label class="form-label col-3">Dao Model Package：</label>
+            <div class="formControls col-6">
+                <input type="text" id="daoPackage" class="input-text" value="<%=daoPackage %>" name="daoPackage" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Dao Model Name：</label>
+            <div class="formControls col-6">
+                <input type="text" id="daoName" class="input-text" value="<%=daoName %>" name="daoName" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+        <br>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Service Package：</label>
+            <div class="formControls col-6">
+                <input type="text" id="servicePackage" class="input-text" value="<%=servicePackage %>" name="servicePackage" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Service Name：</label>
+            <div class="formControls col-6">
+                <input type="text" id="serviceModel" class="input-text" value="<%=serviceModel %>" name="serviceModel" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+		<br>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">ServiceImpl Package：</label>
+            <div class="formControls col-6">
+                <input type="text" id="serviceImplPackage" class="input-text" value="<%=serviceImplPackage %>" name="serviceImplPackage" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">ServiceImpl Name：</label>
+            <div class="formControls col-6">
+                <input type="text" id="serviceImplModel" class="input-text" value="<%=serviceImplModel %>" name="serviceImplModel" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+		<br>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Controller Package：</label>
+            <div class="formControls col-6">
+                <input type="text" id="controllerPackage" class="input-text" value="<%=controllerPackage %>" name="controllerPackage" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Controller Name：</label>
+            <div class="formControls col-6">
+                <input type="text" id="controllerModel" class="input-text" value="<%=controllerModel %>" name="controllerModel" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+		<div class="row cl">
+            <label class="form-label col-3">Controller Request Mapping：</label>
+            <div class="formControls col-6">
+                <input type="text" id="controllerRequestMapping" class="input-text" value="<%=controllerRequestMapping %>" name="controllerRequestMapping" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+		<br>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Add Req Package：</label>
+            <div class="formControls col-6">
+                <input type="text" id="addReqPackage" class="input-text" value="<%=addReqPackage %>" name="addReqPackage" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Add Req  Name：</label>
+            <div class="formControls col-6">
+                <input type="text" id="addReqModel" class="input-text" value="<%=addReqModel %>" name="addReqModel" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+		<br>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Update Req Package：</label>
+            <div class="formControls col-6">
+                <input type="text" id="updateReqPackage" class="input-text" value="<%=updateReqPackage %>" name="updateReqPackage" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Update Req  Name：</label>
+            <div class="formControls col-6">
+                <input type="text" id="updateReqModel" class="input-text" value="<%=updateReqModel %>" name="updateReqModel" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+		<br>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Query Req Package：</label>
+            <div class="formControls col-6">
+                <input type="text" id="queryReqPackage" class="input-text" value="<%=queryReqPackage %>" name="queryReqPackage" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+
+ 		<div class="row cl">
+            <label class="form-label col-3">Query Req  Name：</label>
+            <div class="formControls col-6">
+                <input type="text" id="queryReqModel" class="input-text" value="<%=queryReqModel %>" name="queryReqModel" >
+            </div>
+           <div class="col-3"></div>
+        </div>
+		<br>
+		<hr>
+		
+		<div class="pd-20">
+			<div class="cl pd-5 bg-1 bk-gray mt-20"> 
+				<table id="table_id" class="table table-border table-bordered table-bg table-striped table-hover">
+					<thead>
+						<tr class="text-c">
+		            		<th>字段名</th>
+		            		<th>字段类型</th>
+		            		<th>注释</th>
+		            		<th>属性名</th>
+		            		<th>属性类型</th>
+		            		<th>默认值</th>
+		            		<th>是否可为空</th>
+		            		<th>是否可搜索</th>
+		            		<th>列表页可见</th>
+		            		<th>新增页可见</th>
+		            		<th>修改页可见</th>
+		            		<th>详情页可见</th>
+						</tr>
+						<%for(var i=0;i<columnInfos.length;i++){%>
+						<tr>
+							<td><input type="text" class="input-text" value="<%=columnInfos[i].columnName%>"  name="columnInfos[<%=i%>].columnName" ></td>
+							<td><input type="text" class="input-text" value="<%=columnInfos[i].columnType%>"  name="columnInfos[<%=i%>].columnType" ></td>
+							<td><input type="text" class="input-text" value="<%=columnInfos[i].columnComment%>"  name="columnInfos[<%=i%>].columnComment" ></td>
+							<td><input type="text" class="input-text" value="<%=columnInfos[i].propertyName%>"  name="columnInfos[<%=i%>].propertyName" ></td>
+							<td><input type="text" class="input-text" value="<%=columnInfos[i].propertyType%>"  name="columnInfos[<%=i%>].propertyType" ></td>
+							<td><input type="text" class="input-text" value="<%=columnInfos[i].defaultValue%>"  name="columnInfos[<%=i%>].defaultValue" ></td>
+							<td><input type="checkbox" class="input-text" value="true" <%if(columnInfos[i].nullAble){%>checked="checked"<%}%> name="columnInfos[<%=i%>].nullAble" ></td>
+							<td><input type="checkbox" class="input-text" value="true" <%if(columnInfos[i].searchAble){%>checked="checked"<%}%> name="columnInfos[<%=i%>].searchAble" ></td>
+							<td><input type="checkbox" class="input-text" value="true" <%if(columnInfos[i].listAble){%>checked="checked"<%}%> name="columnInfos[<%=i%>].listAble" ></td>
+							<td><input type="checkbox" class="input-text" value="true" <%if(columnInfos[i].addAble){%>checked="checked"<%}%> name="columnInfos[<%=i%>].addAble" ></td>
+							<td><input type="checkbox" class="input-text" value="true" <%if(columnInfos[i].modifyAble){%>checked="checked"<%}%> name="columnInfos[<%=i%>].modifyAble" ></td>
+							<td><input type="checkbox" class="input-text" value="true" <%if(columnInfos[i].detailAble){%>checked="checked"<%}%> name="columnInfos[<%=i%>].detailAble" ></td>
+						</tr>
+            			<%}%>
+					</thead>
+				</table>
+			</div>
+		</div>
+        
+        <div class="row cl">
+            <div class="col-9 col-offset-3">
+                <input type="submit" value="提交" class="btn btn-primary radius" id="save"> 
+            </div>
+        </div> 
+    </form> 
+	</script>
+</div>
+
+<script>
+	$(function(){
+		var tableName = getQueryString("tableName");
+		
+		var baiduTemplate = baidu.template('template_id');
+		$.ajax({
+			type:'POST',
+			url:BaseURL+'/table',
+			data: {'tableName':tableName},
+			datatype:'json',
+			success:function(data){
+				$('#containerId').append(baiduTemplate(data));
+				
+				$("#save").click(function(){
+					$.ajax({
+						type: "POST",
+						url: BaseURL+'http://localhost:8080/generate',
+						data: $('#model_form').serialize(),
+						datatype:'json',
+						success:function(data){
+							alert("生成完成");
+							window.location = "model.html?tableName="+tableName;
+						}
+					});
+				});
+				
+				
+				$('#packageName').on("change", function(){
+					var packageName = $(this).val();
+					
+					$('#mapperModelPackage').val(packageName.replace("model","mapper"));
+					$('#mapperXmlPackage').val(packageName.replace("model","mapper"));
+					$('#mapperQueryModelPackage').val(packageName.replace("base.model","biz.mapper"));
+					$('#mapperQueryXmlPackage').val(packageName.replace("base.model","biz.mapper"));
+					$('#parameterPackage').val(packageName.replace("base.model","biz.parameter"));
+					$('#servicePackage').val(packageName.replace("base.model","biz.service"));
+					$('#serviceImplPackage').val($('#servicePackage').val()+".impl");
+					$('#controllerPackage').val(packageName.replace("base.model","web.controller"));
+					$('#addReqPackage').val(packageName.replace("base.model","web.req"));
+					$('#updateReqPackage').val(packageName.replace("base.model","web.req"));
+					$('#queryReqPackage').val(packageName.replace("base.model","web.req"));
+				});
+				
+				$('#modelName').on("change", function(){
+					var modelName = $(this).val();
+
+					$('#mapperModelName').val(modelName+"Mapper");
+					$('#mapperXmlName').val(modelName+"Mapper");
+					$('#mapperQueryModelName').val(modelName+"QueryMapper");
+					$('#mapperQueryXmlName').val(modelName+"QueryMapper");
+					$('#parameterModel').val(modelName+"Parameter");
+					$('#serviceModel').val(modelName+"Service");
+					$('#serviceImplModel').val($('#serviceModel').val()+"Impl");
+					$('#controllerModel').val(modelName+"Controller");
+					$('#addReqModel').val(modelName+"AddReq");
+					$('#updateReqModel').val(modelName+"UpdateReq");
+					$('#queryReqModel').val(modelName+"QueryReq");
+				});
+			}
+		});
+		
+		
+		
+	});
+</script>
+</body>
+</html>
