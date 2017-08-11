@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.framework.parent</groupId>
+		<artifactId>boot-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<groupId>com.framework.common</groupId>
+	<artifactId>common</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>common-core</module>
+		<module>common-web</module>
+	</modules>
+
+	<properties>
+		<framework.constant>1.0.0</framework.constant>
+		<framework.common.core>1.0.0</framework.common.core>
+		<framework.common.web>1.0.0</framework.common.web>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.framework.common</groupId>
+				<artifactId>base-constant</artifactId>
+				<version>${framework.constant}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.framework.common</groupId>
+				<artifactId>common-core</artifactId>
+				<version>${framework.common.core}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.framework.common</groupId>
+				<artifactId>common-web</artifactId>
+				<version>${framework.common.web}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
