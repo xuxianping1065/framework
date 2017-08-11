@@ -1,7 +1,10 @@
 package com.framework.common.web.util;
 
 import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -49,5 +52,36 @@ public class IpUtils {
 			}
 		}
 		return ipAddress;
+	}
+	
+	
+	/**
+	 * 获得本机IP地址
+	 * @param request
+	 * @return
+	 */
+	public static String getIpAddress() {
+		String ip = null;
+		try {
+			Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+			while (interfaces.hasMoreElements()) {
+				NetworkInterface current = interfaces.nextElement();
+				if (!current.isUp() || current.isLoopback() || current.isVirtual()){
+					continue;
+				}
+				Enumeration<InetAddress> addresses = current.getInetAddresses();
+				while (addresses.hasMoreElements()) {
+					InetAddress addr = addresses.nextElement();
+					if (addr.isLoopbackAddress()){
+						continue;
+					}
+					ip = addr.getHostAddress();
+					return ip;
+				}
+			}
+		} catch (SocketException e) {
+			e.printStackTrace();
+		}
+		return ip;
 	}
 }
