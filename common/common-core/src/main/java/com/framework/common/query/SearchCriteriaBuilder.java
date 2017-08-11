@@ -3,6 +3,11 @@ package com.framework.common.query;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 条件构造工具类
+ * @version 1.0
+ * @author xxp
+ */
 public class SearchCriteriaBuilder {
 
 	private Map<String, Object> criteriaMap = new HashMap<String, Object>();
