@@ -90,7 +90,7 @@
 		</selectKey>
 		insert into ${tableName} (
 			<#list columnInfos as columnInfo>
-			<#if 'id' != columnInfo.columnName>
+			<#if 'id' != columnInfo.propertyName>
 			${columnInfo.columnName}<#if columnInfo_has_next>,</#if>
 			</#if>
 			</#list>)
